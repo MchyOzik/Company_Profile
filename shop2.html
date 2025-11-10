@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product and Shop - Griya Batik Laras Anom</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="Images/logo.jpeg" alt="Logo" />
+        <span class="brand">Laras Anom</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="shop.html" class="active">Product And Shop</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="developer.html">Developer's</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- PRODUCT SECTION -->
+  <section class="product-section">
+    <div class="title-container">
+      <h2 class="title">Baju & Bucket Batik</h2>
+      <a href="shop.html" class="more-products">Kembali</a>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="Images/baju1.png" alt="Batik 7" />
+        <div class="price-tag">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span><b>Rp.</b> 120.000</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="Images/baju2.png" alt="Batik 8" />
+        <div class="price-tag">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span><b>Rp.</b> 130.000</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="Images/baju3.png" alt="Batik 9" />
+        <div class="price-tag">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span><b>Rp.</b> 115.000</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="Images/baju4.png" alt="Batik 10" />
+        <div class="price-tag">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span><b>Rp.</b> 140.000</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="Images/bucket 1.png" alt="Batik 8" />
+        <div class="price-tag">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span><b>Rp.</b> 130.000</span>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="Images/bucket2.png" alt="Batik 9" />
+        <div class="price-tag">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span><b>Rp.</b> 115.000</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPUP ORDER FORM -->
+<div class="popup" id="orderPopup">
+  <div class="popup-content">
+    <span class="close-btn" id="closePopup">&times;</span>
+
+    <img id="popupImg" src="" alt="Produk" class="popup-img" />
+    <h3 id="popupTitle">Nama Produk</h3>
+
+    <label for="name">Nama Lengkap:</label>
+    <input type="text" id="name" placeholder="Masukkan nama kamu" required />
+
+    <label for="jumlah">Jumlah Barang:</label>
+    <input type="number" id="jumlah" min="1" value="1" required />
+
+    <button id="orderBtn">Pesan via WhatsApp</button>
+  </div>
+</div>
+
+<script>
+  // Nomor WhatsApp kamu (ganti ini)
+  const adminNumber = "6285790201784";
+
+  const popup = document.getElementById("orderPopup");
+  const closePopup = document.getElementById("closePopup");
+  const popupImg = document.getElementById("popupImg");
+  const popupTitle = document.getElementById("popupTitle");
+  const orderBtn = document.getElementById("orderBtn");
+
+  // Ketika gambar produk diklik
+  document.querySelectorAll(".product-card img").forEach((img) => {
+    img.addEventListener("click", () => {
+      popup.classList.add("show");
+      popupImg.src = img.src;
+      popupTitle.textContent = img.alt;
+      popup.dataset.product = img.alt;
+    });
+  });
+
+  // Tutup popup
+  closePopup.addEventListener("click", () => popup.classList.remove("show"));
+
+  // Tombol pesan ke WhatsApp
+  orderBtn.addEventListener("click", () => {
+    const name = document.getElementById("name").value.trim();
+    const jumlah = document.getElementById("jumlah").value.trim();
+    const product = popup.dataset.product;
+
+    if (!name || !jumlah) {
+      alert("Harap isi semua data terlebih dahulu.");
+      return;
+    }
+
+    // Pesan WhatsApp dengan emoji dan baris baru aman
+const message = 
+"Halo Admin *Griya Batik Laras Anom*, 👋\n" +
+"👤 Nama: " + name + "\n" +
+"📝 Produk: *" + product + "*\n" +
+"📦 Jumlah: " + jumlah + "\n" +
+"📝 *Pesan untuk Admin*:\n" +
+"Mohon dibantu proses pemesanan saya, ya. Jika produk tersedia, saya siap melanjutkan pembelian. Terima kasih 🙏";
+
+const url = `https://wa.me/${adminNumber}?text=${encodeURIComponent(message)}`;
+window.open(url, "_blank");
+popup.classList.remove("show");
+  });
+</script>
+  
+</body>
+</html>

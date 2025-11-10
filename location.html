@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Location - Griya Batik Laras Anom</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="Images/logo.jpeg" alt="Logo" />
+        <span class="brand">Laras Anom</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="shop.html">Product And Shop</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="location.html" class="active">Location</a></li>
+        <li><a href="developer.html">Developer's</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- LOCATION SECTION -->
+  <section class="location-section">
+    <div class="location-container">
+      <div class="map-info">
+        <h2 class="map-title">Lokasi <span class="highlight">Griya Batik Laras Anom</span></h2>
+        <p class="map-desc">
+          Kamu dapat mengunjungi toko kami secara langsung di Jln. Abadi, Kec. Nglegok, Kab. Blitar, Jawa Timur, Kode Pos 66181.  
+          Nikmati pengalaman berbelanja batik yang autentik dan nyaman dengan berbagai koleksi pilihan terbaik kami.
+          Di tempat ini pula, kami memproduksi batik secara tradisional dan modern, mrnggabungkan tehnik tulis, cap, 
+          dan kombinasi warna alami untuk menghasilkan karya batik berkualitas tinggi.
+        </p>
+      </div>
+
+      <div class="map-container">
+  <!-- Google Maps Embed -->
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1437.6787651984864!2d112.2129064021556!3d-8.039271749605101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78edc7de0b2e65%3A0xe7497146f28911e2!2sBATIK%20LARAS%20ANOM!5e0!3m2!1sen!2sid!4v1762338756209!5m2!1sen!2sid" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  <a href="https://maps.app.goo.gl/XnvZkYTPpYBW9ZXq5"
+     target="_blank"
+     style="position:absolute;top:0;left:0;width:100%;height:100%;"></a>
+      </div>
+    </div>
+</div>
+
+  <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <label for="question">Questions</label>
+      <input type="text" id="question" placeholder="Ask something..." />
+    </div>
+
+     <div class="footer-right">
+      <h4>Detail Informations</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/batik_larasanom/" target="_blank" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=6285780449363&text&type=phone_number&app_absent=0" target="_blank" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/laras.anom.98/" target="_blank" title="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.tiktok.com/@batiklarasanom?_t=8epharb3qaf&_r=1" target="_blank" title="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Blok agar halaman tetap "terkunci"
+  document.body.style.overflow = "hidden";
+
+  // Deteksi scroll wheel
+  let footer = document.querySelector(".footer");
+  let timeout;
+
+  window.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0) {
+      footer.classList.add("show-footer");
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        footer.classList.remove("show-footer");
+      }, 4000); // Footer menghilang setelah 4 detik
+    }
+  });
+</script>
+
+</body>
+</html>

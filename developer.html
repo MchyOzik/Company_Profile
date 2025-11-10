@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer - Griya Batik Laras Anom</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="Images/logo.jpeg" alt="Logo Laras Anom">
+      <span class="brand">Laras Anom</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="shop.html">Product and Shop</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="developer.html" class="active">Developer's</a></li>
+    </ul>
+
+    <div class="nav-icons">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-solid fa-bars menu-toggle"></i>
+    </div>
+  </header>
+  
+
+  <!-- DEVELOPER SECTION -->
+  <section class="developer">
+    <div class="dev-container">
+      <h1>Our Developer's</h1>
+      <p class="intro">
+        Tim pengembang website <strong>Griya Batik Laras Anom</strong>.
+      </p>
+
+      <div class="dev-grid">
+        <!-- Developer 1 -->
+        <div class="dev-card">
+          <img src="Images/Alfira.png" alt="Developer 1" class="dev-photo">
+          <h2>Alfira Keysa Aprilita</h2>
+          <a href="https://alfiraaprilita2509-ai.github.io/AlfiraKeysa/" target="_blank" class="github-link">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+
+        <!-- Developer 3 -->
+        <div class="dev-card">
+          <img src="Images/Reta.png" alt="Developer 3" class="dev-photo">
+          <h2>Mareta Agni Anggraini</h2>
+          <a href="https://maretaagnianggraini-art.github.io/retaree/home.html" target="_blank" class="github-link">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+
+        <!-- Developer 4 -->
+        <div class="dev-card">
+          <img src="Images/Ozik2.png" alt="Developer 4" class="dev-photo">
+          <h2>M. Choirul Rozikin</h2>
+          <a href="https://mchyozik.github.io/Portofolio/index.html" target="_blank" class="github-link">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+
+        <!-- Developer 5 -->
+        <div class="dev-card">
+          <img src="Images/Gesang.png" alt="Developer 5" class="dev-photo">
+          <h2>Gesang Ramadhan</h2>
+          <a href="https://gesangg-star.github.io/Portofolio-real/" target="_blank" class="github-link">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <label for="question">Questions</label>
+      <input type="text" id="question" placeholder="Ask something..." />
+    </div>
+
+     <div class="footer-right">
+      <h4>Detail Informations</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/batik_larasanom/" target="_blank" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=6285780449363&text&type=phone_number&app_absent=0" target="_blank" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.facebook.com/laras.anom.98/" target="_blank" title="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.tiktok.com/@batiklarasanom?_t=8epharb3qaf&_r=1" target="_blank" title="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Blok agar halaman tetap "terkunci"
+  document.body.style.overflow = "hidden";
+
+  // Deteksi scroll wheel
+  let footer = document.querySelector(".footer");
+  let timeout;
+
+  window.addEventListener("wheel", (e) => {
+    if (e.deltaY > 0) {
+      footer.classList.add("show-footer");
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        footer.classList.remove("show-footer");
+      }, 4000); // Footer menghilang setelah 4 detik
+    }
+  });
+</script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
